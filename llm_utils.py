@@ -5,12 +5,6 @@
     else:
         raise ValueError("Unknown file format")
 
-
-def merge_items(df, items, side="left"):
-    """Добавляет title и text для left/right id"""
-    rename_map = {
-        "item_id": f"{side}_id",
-        "title": f"title_{side}",
         "text": f"text_{side}",
     }
     return df.merge(items.rename(columns=rename_map), on=f"{side}_id", how="left")
