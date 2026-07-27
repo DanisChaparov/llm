@@ -1,17 +1,4 @@
-# 📘 CHEATSHEET: Задачи LLM / NLP на олимпиаде
 
-## 🧠 Цель задачи
-Определить, насколько два текста релевантны друг другу.
-
-## 📝 Частый формат входных данных:
-- items.csv / items.parquet  
-- train.csv  
-- test.csv  
-
-## 🧩 Ключевые колонки:
-- item_id
-- title
-- text
 - left_id / right_id
 - label (класс)
 
