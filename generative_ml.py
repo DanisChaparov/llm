@@ -34,32 +34,7 @@ def main():
         # если в тесте нет отдельного id, создадим его
         test[ID_COL] = np.arange(len(test))
 
-    print("[INFO] Train shape:", train.shape)
-    print("[INFO] Test shape :", test.shape)
-
-    # 2. Модель эмбеддингов
-    print("[INFO] Loading embedding model:", MODEL_NAME)
-    model = SentenceTransformer(MODEL_NAME)
-
-    # 3. Эмбеддинги train input_text
-    print("[INFO] Encoding train input_text...")
-    train_inputs = train[INPUT_COL].fillna("").astype(str).tolist()
-    train_emb = model.encode(train_inputs, show_progress_bar=True, batch_size=64)
-    train_emb = np.asarray(train_emb)
-
-    # 4. Эмбеддинги test input_text
-    print("[INFO] Encoding test input_text...")
-    test_inputs = 
-    preds = []
-
-    # Чтобы не считать косинус по формуле в цикле, можно заранее нормировать
-    train_norm = train_emb / (np.linalg.norm(train_emb, axis=1, keepdims=True) + 1e-9)
-    test_norm  = test_emb  / (np.linalg.norm(test_emb,  axis=1, keepdims=True) + 1e-9)
-
-    # По сути это kNN с k=1 по косинусу
-    for i in tqdm(range(len(test_norm))):
-        v = test_norm[i : i+1, :]               # (1, d)
-        sims = (v @ train_norm.T)[0]            # косинусные похожести со всеми train
+    pr
         best_idx = int(np.argmax(sims))         # индекс самого похожего
         best_target = train.iloc[best_idx][TARGET_COL]
         preds.append(best_target)
