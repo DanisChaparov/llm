@@ -49,12 +49,7 @@ def main():
 
     # 4. Эмбеддинги test input_text
     print("[INFO] Encoding test input_text...")
-    test_inputs = test[INPUT_COL].fillna("").astype(str).tolist()
-    test_emb = model.encode(test_inputs, show_progress_bar=True, batch_size=64)
-    test_emb = np.asarray(test_emb)
-
-    # 5. Для каждого тестового объекта — ищем ближайший train
-    print("[INFO] Searching nearest neighbors...")
+    test_inputs = 
     preds = []
 
     # Чтобы не считать косинус по формуле в цикле, можно заранее нормировать
