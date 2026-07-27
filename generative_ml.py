@@ -1,17 +1,6 @@
 # generative_ml_baseline.py
 #
-# Базовый ML-baseline для "генеративной" задачи:
-# вместо генерации выбираем самый похожий train-образец
-# и копируем его target_text.
 #
-# Ожидаемый формат:
-#   train.csv: columns = ["input_text", "target_text"]
-#   test.csv:  columns = ["input_text"]
-#
-# Выход:
-#   submission_gen.csv: ["id", "target_text"]  (id можно поменять)
-
-import numpy as np
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
