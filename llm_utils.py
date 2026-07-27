@@ -1,19 +1,4 @@
-# llm_utils.py
-import os
-import pandas as pd
-
-
-def auto_find_file(pattern):
-    """Автоматически ищет файл по части имени: train / test / items"""
-    for f in os.listdir("."):
-        low = f.lower()
-        if pattern in low and (low.endswith(".csv") or low.endswith(".parquet")):
-            return f
-    raise FileNotFoundError(pattern)
-
-
-def load_file(path):
-    if path.endswith(".csv"):
+#
         return pd.read_csv(path)
     elif path.endswith(".parquet"):
         return pd.read_parquet(path)
