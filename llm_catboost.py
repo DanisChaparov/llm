@@ -31,16 +31,7 @@ train = train.merge(items, left_on="right_id", right_on="item_id", how="left",
                     suffixes=("_left", "_right"))
 
 test = test.merge(items, left_on="left_id", right_on="item_id", how="left")
-test = test.merge(items, left_on="right_id", right_on="item_id", how="left",
-                  suffixes=("_left", "_right"))
-
-# Combine title+text
-train["text_left_full"]  = train["title_left"]  + ". " + train["text_left"]
-train["text_right_full"] = train["title_right"] + ". " + train["text_right"]
-
-test["text_left_full"]  = test["title_left"]  + ". " + test["text_left"]
-test["text_right_full"] = test["title_right"] + ". " + test["text_right"]
-
+test = test.mer
 # -------------------------------------
 # LOAD EMBEDDING MODEL
 # (must be in /shared/models on the cluster)
