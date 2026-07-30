@@ -1,17 +1,4 @@
 
-- left_id / right_id
-- label (класс)
-
-## 🟦 Классы:
-- no_relevant
-- relevant_minus
-- relevant
-- relevant_plus
-
-Метрика: Weighted F1
-
----
-
 # 🚀 PIPELINE
 
 ## 1. Мерджим тексты
