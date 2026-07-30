@@ -2,13 +2,7 @@
 # Универсальный LLM-пайплайн для задач релевантности
 # Weighted F1, SentenceTransformer, CatBoost
 
-import os
-import pandas as pd
-import numpy as np
-
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import f1_score
+imt f1_score
 from catboost import CatBoostClassifier
 from sentence_transformers import SentenceTransformer
 
